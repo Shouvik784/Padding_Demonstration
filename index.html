@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Padding Demo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Padding Demonstration</h1>
+    
+    <div class="controls">
+        <div>
+            <label for="paddingRange">Padding:</label>
+            <input type="range" id="paddingRange" min="0" max="100" value="20">
+            <span id="paddingValue" class="value-display">20px</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="box" id="demoBox">
+            This is a container with padding. Adjust the slider to see how padding affects the content.
+            The green area shows the content box, and the gray area around it shows the padding.
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>What is Padding?</h2>
+        <p>Padding is the space between the content of an element and its border. It creates breathing room inside the element.</p>
+        <p>In the example above, the green box represents the content, and the space between the green box and the container's border is the padding.</p>
+    </div>
+
+    <script>
+        const paddingSlider = document.getElementById('paddingRange');
+        const paddingValue = document.getElementById('paddingValue');
+        const demoBox = document.getElementById('demoBox');
+
+        paddingSlider.addEventListener('input', function() {
+            const padding = this.value + 'px';
+            demoBox.style.padding = padding;
+            paddingValue.textContent = padding;
+        });
+    </script>
+</body>
+</html>
